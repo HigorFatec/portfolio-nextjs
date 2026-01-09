@@ -11,7 +11,9 @@ import {
   LayoutDashboard, 
   Zap,
   CheckCircle2,
-  Smartphone
+  Smartphone,
+  GraduationCap,
+  FileText
 } from "lucide-react";
 
 const roles = [
@@ -104,7 +106,7 @@ export default function Home() {
             <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-full border-4 border-slate-800 overflow-hidden bg-slate-900 shadow-2xl">
               <Image
                 src="/higor.JPG" // SALVE SUA FOTO COMO perfil.png NA PASTA PUBLIC
-                alt="Higor Machado"
+                alt="Higor dos Santos Machado"
                 fill
                 className="object-cover object-top scale-155"
                 priority
@@ -202,6 +204,47 @@ export default function Home() {
         </div>
       </section>
 
+{/* ACADEMIC SECTION */}
+      <section style={reveal(800)} className="max-w-7xl mx-auto px-6 py-24 border-t border-slate-800/50">
+        <div className="bg-gradient-to-r from-blue-900/20 to-transparent p-8 md:p-12 rounded-[3rem] border border-blue-500/10 flex flex-col md:flex-row items-center gap-12">
+          <div className="bg-blue-600/20 p-6 rounded-full text-blue-400 shrink-0">
+            <GraduationCap size={60} strokeWidth={1.5} />
+          </div>
+          
+          <div className="flex-1">
+            <div className="flex items-center gap-2 text-blue-400 font-mono text-sm mb-4 uppercase tracking-tighter">
+              <span className="bg-blue-500 w-2 h-2 rounded-full"></span>
+              Publicação Acadêmica | FATEC
+            </div>
+            <h3 className="text-3xl font-bold text-white mb-4">
+              Aplicativo de Conferência Logística
+            </h3>
+            <p className="text-slate-400 text-lg mb-6 leading-relaxed">
+              Trabalho de Conclusão de Curso aprovado com <span className="text-white font-bold">Nota Máxima</span> e publicado na WorkTec 2024. 
+              A pesquisa foca na otimização de fluxos operacionais através de tecnologias móveis, servindo de base para as soluções de alta performance que desenvolvo hoje.
+            </p>
+            
+            <a 
+              href="http://www.fatecrp.edu.br/WorkTec/edicoes/2024-1/trabalhos/ADS/artigo_2.pdf" 
+              target="_blank"
+              className="inline-flex items-center gap-2 text-white bg-slate-800 hover:bg-slate-700 px-6 py-3 rounded-xl font-medium transition-all border border-slate-700"
+            >
+              <FileText size={18} /> Ler Artigo Completo (PDF)
+            </a>
+          </div>
+
+          <div className="hidden lg:block">
+            <div className="text-center p-6 border-l border-slate-800">
+              <p className="text-4xl font-black text-blue-500">10</p>
+              <p className="text-xs uppercase text-slate-500 font-bold tracking-widest mt-2">Nota Final</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
       {/* CTA FINAL */}
       <section className="py-40 text-center">
         <div className="max-w-3xl mx-auto px-6">
@@ -215,6 +258,17 @@ export default function Home() {
             <a href="https://www.linkedin.com/in/higor-dos-santos-machado-9a269a139/" target="_blank" className="bg-slate-800 hover:bg-slate-700 text-white px-12 py-5 rounded-full font-bold text-lg transition-all flex items-center gap-2 border border-slate-700">
               LinkedIn <ExternalLink size={20} />
             </a>
+
+
+<a href="/Curriculo_Higor.pdf" // Nome exato do ficheiro na pasta public
+    target="_blank"
+className="bg-slate-800 hover:bg-slate-700 text-white px-12 py-5 rounded-full font-bold text-lg transition-all flex items-center gap-2 border border-slate-700">
+
+    <FileText size={20} /> Baixar Currículo (PDF)
+  </a>
+
+
+
           </div>
         </div>
       </section>
