@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description: "Especialista em automação RPA, BI e desenvolvimento Full Stack. Mais de 200h economizadas mensais através de soluções digitais de alto impacto.",
   
   // Palavras-chave para ajudar no SEO (opcional, mas bom ter em mente)
-  keywords: ["Higor Machado", "Desenvolvedor Full Stack", "Analista de TI", "Automação RPA", "Power BI", "Laravel", "Grupo CargoPolo", "Higor dos Santos Machado"],
+  keywords: ["Higor Machado", "Desenvolvedor Full Stack", "Analista de TI", "Automação RPA", "Power BI", "Laravel", "Grupo CargoPolo", "Higor dos Santos Machado", "Ribeirão Preto", "Serrana", "Portfólio de TI", "São Paulo", "Cravinhos", "Desenvolvimento Web", "Eficiência Operacional", "Soluções Digitais", "Tecnologia da Informação", "TI", "Programação", "Desenvolvimento de Software", "Automação de Processos", "Inovação Tecnológica", "Transformação Digital", "Consultoria de TI", "Projetos de TI", "Sistemas de Informação"],
   
   // Configuração para redes sociais (Open Graph)
   openGraph: {
