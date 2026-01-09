@@ -264,7 +264,7 @@ export default function Home() {
     target="_blank"
 className="bg-slate-800 hover:bg-slate-700 text-white px-12 py-5 rounded-full font-bold text-lg transition-all flex items-center gap-2 border border-slate-700">
 
-    <FileText size={20} /> Baixar Currículo (PDF)
+    <FileText size={20} /> Visualizar Currículo (PDF)
   </a>
 
 
