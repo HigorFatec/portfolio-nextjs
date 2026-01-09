@@ -14,13 +14,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   // Título que aparece na aba do navegador
-  title: "Higor Machado | Analista de TI & Desenvolvedor Full Stack",
+  title: "Higor dos Santos Machado | Analista de TI & Dev Full Stack", // Título completo
   
   // Descrição que o Google mostra nos resultados de busca
   description: "Especialista em automação RPA, BI e desenvolvimento Full Stack. Mais de 200h economizadas mensais através de soluções digitais de alto impacto.",
   
   // Palavras-chave para ajudar no SEO (opcional, mas bom ter em mente)
-  keywords: ["Higor Machado", "Desenvolvedor Full Stack", "Analista de TI", "Automação RPA", "Power BI", "Laravel", "Grupo CargoPolo"],
+  keywords: ["Higor Machado", "Desenvolvedor Full Stack", "Analista de TI", "Automação RPA", "Power BI", "Laravel", "Grupo CargoPolo", "Higor dos Santos Machado"],
   
   // Configuração para redes sociais (Open Graph)
   openGraph: {
