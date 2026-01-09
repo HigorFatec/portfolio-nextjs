@@ -13,8 +13,52 @@ import {
   CheckCircle2,
   Smartphone,
   GraduationCap,
-  FileText
+  FileText,
+  Box,
+  Globe,
+  Settings2,
+  Terminal,
+  CodeIcon,
 } from "lucide-react";
+
+
+const coreSkills = [
+  { name: "Automação com Python", icon: <Cpu size={18} /> },
+  { name: "Pandas (Análise de Dados)", icon: <BarChart3 size={18} /> },
+  { name: "Selenium / RPA", icon: <Globe size={18} /> },
+  { name: "PyAutoGUI", icon: <Cpu size={18} /> },
+  { name: "SQL Server", icon: <Database size={18} /> },
+  { name: "Oracle SQL", icon: <Database size={18} /> },
+  { name: "Power BI", icon: <BarChart3 size={18} /> },
+  { name: "Power Automate", icon: <Settings2 size={18} /> },
+  { name: "Power Apps", icon: <Settings2 size={18} /> },
+];
+const devSkills = [
+  { name: "React / Next.js", icon: <LayoutDashboard size={18} /> },
+  { name: "PHP / Laravel", icon: <Code2 size={18} /> },
+  { name: "WordPress", icon: <CodeIcon size={18} /> },
+  { name: "Flutter / Dart", icon: <Smartphone size={18} /> },
+  { name: "Firebase (NoSQL)", icon: <Zap size={18} /> },
+];
+const databaseSkills = [
+  { name: "PostgreSQL", icon: <Database size={18} /> },
+  { name: "MySQL", icon: <Database size={18} /> },
+  { name: "Modelagem de Dados", icon: <Database size={18} /> },
+];
+const corporateSkills = [
+  { name: "SAP ABAP", icon: <Box size={18} /> },
+  { name: "Git / GitHub", icon: <Code2 size={18} /> },
+  { name: "Streamlit", icon: <LayoutDashboard size={18} /> },
+];
+const practices = [
+  { name: "Boas práticas de segurança em aplicações", icon: <CheckCircle2 size={18} /> },
+  { name: "Controle de acesso e permissões", icon: <CheckCircle2 size={18} /> },
+  { name: "Automação segura de processos", icon: <CheckCircle2 size={18} /> },
+];
+
+
+
+
 
 const roles = [
   "Analista de TI @ Grupo CargoPolo",
@@ -62,7 +106,17 @@ const projects = [
   }
 ];
 
+
+
+const Badge = ({ tech }: { tech: { name: string, icon: React.ReactNode } }) => (
+  <div className="flex items-center gap-3 bg-blue-600/10 hover:bg-blue-600/20 border border-blue-500/20 px-6 py-3 rounded-full text-white transition-all hover:-translate-y-1 cursor-default shadow-lg">
+    <span className="text-blue-400">{tech.icon}</span>
+    <span className="font-bold text-xs md:text-sm tracking-wide uppercase">{tech.name}</span>
+  </div>
+);
+
 export default function Home() {
+  const [activeTab, setActiveTab] = useState("core"); // Estado para as habilidades
   const [loaded, setLoaded] = useState(false);
   const [text, setText] = useState("");
   const [roleIndex, setRoleIndex] = useState(0);
@@ -203,6 +257,62 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+
+
+{/* SEÇÃO DE HABILIDADES COM NAVEGAÇÃO POR TABS */}
+      <section className="max-w-7xl mx-auto px-6 py-24 border-t border-slate-800/50">
+        <div className="text-center mb-16">
+          <h2 style={reveal(700)} className="text-3xl font-bold text-white mb-4 italic tracking-tighter uppercase">
+            Minhas Habilidades
+          </h2>
+          <p className="text-slate-400 mb-10">Selecione uma categoria para explorar meu arsenal técnico</p>
+          
+          {/* BOTÕES DE NAVEGAÇÃO */}
+          <div className="flex flex-wrap justify-center gap-3 mb-16">
+            {[
+              { id: "core", label: "Core & Automação" },
+              { id: "dev", label: "Desenvolvimento" },
+              { id: "data", label: "Dados & DB" },
+              { id: "corp", label: "Corporativo & SAP" }
+            ].map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-8 py-3 rounded-full font-bold text-sm transition-all ${
+                  activeTab === tab.id 
+                  ? "bg-blue-600 text-white shadow-lg shadow-blue-600/40 scale-105" 
+                  : "bg-slate-800/50 text-slate-400 hover:bg-slate-800 hover:text-white border border-slate-700"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* ÁREA DE EXIBIÇÃO DINÂMICA */}
+        <div className="min-h-[200px]">
+          <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto animate-in fade-in zoom-in duration-500">
+            {activeTab === "core" && coreSkills.map((tech, i) => <Badge key={i} tech={tech} />)}
+            {activeTab === "dev" && devSkills.map((tech, i) => <Badge key={i} tech={tech} />)}
+            {activeTab === "data" && databaseSkills.map((tech, i) => <Badge key={i} tech={tech} />)}
+            {activeTab === "corp" && corporateSkills.map((tech, i) => <Badge key={i} tech={tech} />)}
+          </div>
+          
+          {/* Dica extra: Práticas de Segurança aparecem em todas ou você pode criar uma aba pra elas */}
+          {activeTab === "corp" && (
+            <div className="mt-12 flex flex-wrap justify-center gap-4 border-t border-slate-800/50 pt-12">
+               <p className="w-full text-center text-xs text-slate-500 uppercase tracking-widest mb-4">Mindset de Segurança</p>
+               {practices.map((tech, i) => <Badge key={i} tech={tech} />)}
+            </div>
+          )}
+        </div>
+      </section>
+
+
+
+
 
 {/* ACADEMIC SECTION */}
       <section style={reveal(800)} className="max-w-7xl mx-auto px-6 py-24 border-t border-slate-800/50">
