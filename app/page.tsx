@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+
 const roles = [
   "Analista de TI",
   "Desenvolvedor Full Stack",
@@ -11,6 +12,9 @@ const roles = [
 ];
 
 export default function Home() {
+
+  
+  
   /* ===== LOAD PROGRESSIVO ===== */
   const [loaded, setLoaded] = useState(false);
 
