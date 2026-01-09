@@ -162,10 +162,10 @@ export default function Home() {
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000"></div>
             <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-full border-4 border-slate-800 overflow-hidden bg-slate-900 shadow-2xl">
               <Image
-                src="/higor.JPG" // SALVE SUA FOTO COMO perfil.png NA PASTA PUBLIC
+                src="/higor_.png" // SALVE SUA FOTO COMO perfil.png NA PASTA PUBLIC
                 alt="Higor dos Santos Machado"
                 fill
-                className="object-cover object-top scale-155"
+                className="object-cover object-top scale-99"
                 priority
               />
             </div>
@@ -357,34 +357,55 @@ export default function Home() {
 
 
 
-
-      {/* CTA FINAL */}
-      <section className="py-40 text-center">
-        <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-5xl md:text-6xl font-black text-white mb-10 tracking-tighter">
-            VAMOS TRANSFORMAR SEUS <span className="text-blue-500 italic text-shadow-glow">PROCESSOS?</span>
+{/* CTA FINAL REFORMULADO */}
+      <section className="py-40 text-center relative overflow-hidden">
+        {/* Glow de fundo para destaque profissional */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-600/5 blur-[120px] rounded-full -z-10"></div>
+        
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+            Pronto para elevar a <span className="text-blue-500 italic">eficiência operacional</span> da sua empresa?
           </h2>
+          
+          <p className="text-slate-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light">
+            Combine inteligência de dados, automação RPA e integração sistêmica para reduzir custos e acelerar resultados.
+          </p>
+
           <div className="flex flex-wrap justify-center gap-6">
-            <a href="https://wa.me/5516981478468?text=Ol%C3%A1%20Higor,%20gostaria%20de%20conversar%20sobre%20seus%20projetos" className="bg-blue-600 hover:bg-blue-500 text-white px-12 py-5 rounded-full font-bold text-lg shadow-xl shadow-blue-600/25 transition-all hover:-translate-y-1">
-              Falar com Higor
+            {/* Botão Principal: Foco em Consultoria/Solução */}
+            <a 
+              href="https://wa.me/5516981478468?text=Olá Higor, vi seu portfólio e gostaria de discutir uma solução tecnológica para minha operação." 
+              className="bg-blue-600 hover:bg-blue-500 text-white px-10 py-5 rounded-full font-bold text-lg shadow-2xl shadow-blue-600/20 transition-all hover:-translate-y-1 flex items-center gap-3"
+            >
+              Agendar Consultoria Técnica
             </a>
-            <a href="https://www.linkedin.com/in/higor-dos-santos-machado-9a269a139/" target="_blank" className="bg-slate-800 hover:bg-slate-700 text-white px-12 py-5 rounded-full font-bold text-lg transition-all flex items-center gap-2 border border-slate-700">
-              LinkedIn <ExternalLink size={20} />
+
+            {/* LinkedIn com estilo mais sóbrio */}
+            <a 
+              href="https://www.linkedin.com/in/higor-dos-santos-machado-9a269a139/" 
+              target="_blank" 
+              className="bg-slate-800/50 hover:bg-slate-800 text-white px-10 py-5 rounded-full font-bold text-lg transition-all flex items-center gap-2 border border-slate-700 backdrop-blur-sm"
+            >
+              Conectar no LinkedIn <ExternalLink size={20} />
             </a>
 
-
-<a href="/Curriculo_Higor.pdf" // Nome exato do ficheiro na pasta public
-    target="_blank"
-className="bg-slate-800 hover:bg-slate-700 text-white px-12 py-5 rounded-full font-bold text-lg transition-all flex items-center gap-2 border border-slate-700">
-
-    <FileText size={20} /> Visualizar Currículo (PDF)
-  </a>
-
-
-
+            {/* Currículo com foco em Trajetória */}
+            <a 
+              href="/Curriculo_Higor.pdf" 
+              target="_blank"
+              className="bg-slate-800/50 hover:bg-slate-800 text-white px-10 py-5 rounded-full font-bold text-lg transition-all flex items-center gap-2 border border-slate-700 backdrop-blur-sm"
+            >
+              <FileText size={20} /> Baixar Executive Summary
+            </a>
           </div>
+          
+          <p className="mt-12 text-slate-500 text-sm font-mono uppercase tracking-[0.2em]">
+            Disponível para projetos globais e parcerias estratégicas
+          </p>
         </div>
       </section>
+
+
 
       <footer className="py-12 text-center text-slate-600 border-t border-slate-800/50">
         <p>© {new Date().getFullYear()} Higor Machado • Desenvolvido com foco em Resultados.</p>
