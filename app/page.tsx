@@ -114,7 +114,7 @@ export default function Home() {
           </div>
 
           <div style={reveal(100)} className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 px-4 py-2 rounded-full text-blue-400 text-sm font-medium mb-8">
-            <Zap size={16} /> Higor Machado • Portfólio de Resultados 2025
+            <Zap size={16} /> Higor dos Santos Machado • Portfólio de Resultados 2025
           </div>
 
           <h1 style={reveal(200)} className="text-6xl md:text-8xl font-black mb-6 tracking-tighter text-white">
