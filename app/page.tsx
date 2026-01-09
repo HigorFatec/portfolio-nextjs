@@ -252,7 +252,7 @@ export default function Home() {
             VAMOS TRANSFORMAR SEUS <span className="text-blue-500 italic text-shadow-glow">PROCESSOS?</span>
           </h2>
           <div className="flex flex-wrap justify-center gap-6">
-            <a href="mailto:higor.05@hotmail.com" className="bg-blue-600 hover:bg-blue-500 text-white px-12 py-5 rounded-full font-bold text-lg shadow-xl shadow-blue-600/25 transition-all hover:-translate-y-1">
+            <a href="https://wa.me/5516981478468?text=Ol%C3%A1%20Higor,%20gostaria%20de%20conversar%20sobre%20seus%20projetos" className="bg-blue-600 hover:bg-blue-500 text-white px-12 py-5 rounded-full font-bold text-lg shadow-xl shadow-blue-600/25 transition-all hover:-translate-y-1">
               Falar com Higor
             </a>
             <a href="https://www.linkedin.com/in/higor-dos-santos-machado-9a269a139/" target="_blank" className="bg-slate-800 hover:bg-slate-700 text-white px-12 py-5 rounded-full font-bold text-lg transition-all flex items-center gap-2 border border-slate-700">
