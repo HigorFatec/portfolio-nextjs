@@ -13,8 +13,36 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Higor Machado | Portfólio",
-  description: "Portfólio profissional de Higor Machado, desenvolvedor full stack.",
+  // Título que aparece na aba do navegador
+  title: "Higor Machado | Analista de TI & Desenvolvedor Full Stack",
+  
+  // Descrição que o Google mostra nos resultados de busca
+  description: "Especialista em automação RPA, BI e desenvolvimento Full Stack. Mais de 200h economizadas mensais através de soluções digitais de alto impacto.",
+  
+  // Palavras-chave para ajudar no SEO (opcional, mas bom ter em mente)
+  keywords: ["Higor Machado", "Desenvolvedor Full Stack", "Analista de TI", "Automação RPA", "Power BI", "Laravel", "Grupo CargoPolo"],
+  
+  // Configuração para redes sociais (Open Graph)
+  openGraph: {
+    title: "Higor Machado | Portfolio 2025",
+    description: "Transformando complexidade operacional em eficiência digital.",
+    url: "https://www.higormachado.com.br",
+    siteName: "Higor Machado Portfolio",
+    locale: "pt_BR",
+    type: "website",
+  },
+  
+  // Para o Twitter/X
+  twitter: {
+    card: "summary_large_image",
+    title: "Higor Machado | Analista de TI",
+    description: "Desenvolvedor focado em resultados e automação de processos.",
+  },
+
+  // Ícones (Certifique-se de ter um favicon.ico na pasta public)
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -23,9 +51,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    // Alterado para pt-BR para que os navegadores não ofereçam tradução desnecessária
+    <html lang="pt-BR" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0f172a]`}
       >
         {children}
       </body>
