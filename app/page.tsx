@@ -72,13 +72,14 @@ export default function Home() {
         className="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-24"
       >
         <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
-          <Image
-            src="/setup.jpg"
-            alt="Meu setup de trabalho"
-            width={380}
-            height={380}
-            className="rounded-full shadow-xl object-cover"
-          />
+        <Image
+          src="/setup.jpg"
+          alt="Meu setup de trabalho"
+          width={380}
+          height={380}
+          className="shadow-xl object-cover rounded-full"
+          style={{ borderRadius: "50%" }}
+        />
 
           <div>
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
