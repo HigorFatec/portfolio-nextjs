@@ -24,15 +24,16 @@ import {
 
 const coreSkills = [
   { name: "Automação com Python", icon: <Cpu size={18} /> },
+  { name: "RPA (Selenium / PyAutoGUI)", icon: <Globe size={18} /> },
   { name: "Pandas (Análise de Dados)", icon: <BarChart3 size={18} /> },
-  { name: "Selenium / RPA", icon: <Globe size={18} /> },
-  { name: "PyAutoGUI", icon: <Cpu size={18} /> },
   { name: "SQL Server", icon: <Database size={18} /> },
   { name: "Oracle SQL", icon: <Database size={18} /> },
   { name: "Power BI", icon: <BarChart3 size={18} /> },
   { name: "Power Automate", icon: <Settings2 size={18} /> },
   { name: "Power Apps", icon: <Settings2 size={18} /> },
 ];
+
+
 const devSkills = [
   { name: "React / Next.js", icon: <LayoutDashboard size={18} /> },
   { name: "PHP / Laravel", icon: <Code2 size={18} /> },
@@ -54,6 +55,8 @@ const practices = [
   { name: "Boas práticas de segurança em aplicações", icon: <CheckCircle2 size={18} /> },
   { name: "Controle de acesso e permissões", icon: <CheckCircle2 size={18} /> },
   { name: "Automação segura de processos", icon: <CheckCircle2 size={18} /> },
+  { name: "Versionamento e rastreabilidade de processos", icon: <CheckCircle2 size={18} /> },
+
 ];
 
 
