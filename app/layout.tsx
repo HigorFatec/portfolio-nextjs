@@ -13,33 +13,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  // Título que aparece na aba do navegador
-  title: "Higor dos Santos Machado | Analista de TI & Dev Full Stack", // Título completo
+  // Isso ajuda o Google a entender qual é a URL oficial
+  metadataBase: new URL("https://www.higormachado.com.br"),
   
-  // Descrição que o Google mostra nos resultados de busca
+  title: "Higor dos Santos Machado | Analista de TI & Dev Full Stack", 
   description: "Especialista em automação RPA, BI e desenvolvimento Full Stack. Mais de 200h economizadas mensais através de soluções digitais de alto impacto.",
   
-  // Palavras-chave para ajudar no SEO (opcional, mas bom ter em mente)
   keywords: ["Higor Machado", "Desenvolvedor Full Stack", "Analista de TI", "Automação RPA", "Power BI", "Laravel", "Grupo CargoPolo", "Higor dos Santos Machado", "Ribeirão Preto", "Serrana", "Portfólio de TI", "São Paulo", "Cravinhos", "Desenvolvimento Web", "Eficiência Operacional", "Soluções Digitais", "Tecnologia da Informação", "TI", "Programação", "Desenvolvimento de Software", "Automação de Processos", "Inovação Tecnológica", "Transformação Digital", "Consultoria de TI", "Projetos de TI", "Sistemas de Informação"],
   
-  // Configuração para redes sociais (Open Graph)
   openGraph: {
     title: "Higor Machado | Portfolio 2025",
     description: "Transformando complexidade operacional em eficiência digital.",
     url: "https://www.higormachado.com.br",
-    siteName: "Higor Machado Portfolio",
+    // IMPORTANTE: Este nome deve ser o que você quer que apareça na busca
+    siteName: "Higor dos Santos Machado", 
     locale: "pt_BR",
     type: "website",
   },
   
-  // Para o Twitter/X
   twitter: {
     card: "summary_large_image",
     title: "Higor Machado | Analista de TI",
     description: "Desenvolvedor focado em resultados e automação de processos.",
   },
 
-  // Ícones (Certifique-se de ter um favicon.ico na pasta public)
   icons: {
     icon: "/favicon.ico",
   },
@@ -50,9 +47,24 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Script JSON-LD para o Google identificar o nome do site
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Higor dos Santos Machado",
+    "alternateName": ["Higor Machado", "Higor Machado Dev"],
+    "url": "https://www.higormachado.com.br",
+  };
+
   return (
-    // Alterado para pt-BR para que os navegadores não ofereçam tradução desnecessária
     <html lang="pt-BR" className="scroll-smooth">
+      <head>
+        {/* Inserindo os dados estruturados diretamente no Head */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0f172a]`}
       >
