@@ -13,19 +13,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  // Isso ajuda o Google a entender qual é a URL oficial
+  // Define a URL base para todos os metadados
   metadataBase: new URL("https://www.higormachado.com.br"),
   
   title: "Higor dos Santos Machado | Analista de TI & Dev Full Stack", 
   description: "Especialista em automação RPA, BI e desenvolvimento Full Stack. Mais de 200h economizadas mensais através de soluções digitais de alto impacto.",
   
+  // Cor da barra do navegador no mobile (combina com seu bg-[#0f172a])
+  themeColor: "#0f172a",
+
   keywords: ["Higor Machado", "Desenvolvedor Full Stack", "Analista de TI", "Automação RPA", "Power BI", "Laravel", "Grupo CargoPolo", "Higor dos Santos Machado", "Ribeirão Preto", "Serrana", "Portfólio de TI", "São Paulo", "Cravinhos", "Desenvolvimento Web", "Eficiência Operacional", "Soluções Digitais", "Tecnologia da Informação", "TI", "Programação", "Desenvolvimento de Software", "Automação de Processos", "Inovação Tecnológica", "Transformação Digital", "Consultoria de TI", "Projetos de TI", "Sistemas de Informação"],
   
   openGraph: {
-    title: "Higor Machado | Portfolio 2025",
+    title: "Higor dos Santos Machado | Portfolio 2025",
     description: "Transformando complexidade operacional em eficiência digital.",
     url: "https://www.higormachado.com.br",
-    // IMPORTANTE: Este nome deve ser o que você quer que apareça na busca
+    // Nome que aparece acima da URL na busca do Google
     siteName: "Higor dos Santos Machado", 
     locale: "pt_BR",
     type: "website",
@@ -33,12 +36,16 @@ export const metadata: Metadata = {
   
   twitter: {
     card: "summary_large_image",
-    title: "Higor Machado | Analista de TI",
+    title: "Higor dos Santos Machado | Analista de TI",
     description: "Desenvolvedor focado em resultados e automação de processos.",
   },
 
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
+    ],
+    apple: "/apple-touch-icon.png", // Caso você crie um ícone para iPhone futuramente
   },
 };
 
@@ -47,7 +54,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Script JSON-LD para o Google identificar o nome do site
+  // Script JSON-LD para o Google identificar formalmente o nome do site
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -59,7 +66,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="scroll-smooth">
       <head>
-        {/* Inserindo os dados estruturados diretamente no Head */}
+        {/* Dados estruturados para o Nome do Site na busca */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
