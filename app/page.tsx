@@ -1,5 +1,6 @@
 "use client";
 
+import Script from "next/script";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { 
@@ -19,6 +20,7 @@ import {
   Settings2,
   Terminal,
   CodeIcon,
+  Github,
 } from "lucide-react";
 
 
@@ -357,53 +359,82 @@ export default function Home() {
 
 
 
-{/* CTA FINAL REFORMULADO */}
-      <section className="py-40 text-center relative overflow-hidden">
-        {/* Glow de fundo para destaque profissional */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-600/5 blur-[120px] rounded-full -z-10"></div>
+{/* CTA FINAL REFORMULADO - VERSÃO COM GITHUB */}
+<section className="py-40 relative overflow-hidden">
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-600/10 blur-[120px] rounded-full -z-10"></div>
+  
+  <div className="max-w-5xl mx-auto px-6">
+    <div className="bg-slate-800/20 border border-slate-700/50 backdrop-blur-xl rounded-[4rem] p-8 md:p-16 text-center shadow-2xl">
+      
+      {/* PERFIS SOCIAIS - LINKEDIN + GITHUB */}
+      <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-12">
         
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
-            Pronto para elevar a <span className="text-blue-500 italic">eficiência operacional</span> da sua empresa?
-          </h2>
-          
-          <p className="text-slate-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light">
-            Combine inteligência de dados, automação RPA e integração sistêmica para reduzir custos e acelerar resultados.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-6">
-            {/* Botão Principal: Foco em Consultoria/Solução */}
-            <a 
-              href="https://wa.me/5516981478468?text=Olá Higor, vi seu portfólio e gostaria de discutir uma solução tecnológica para minha operação." 
-              className="bg-blue-600 hover:bg-blue-500 text-white px-10 py-5 rounded-full font-bold text-lg shadow-2xl shadow-blue-600/20 transition-all hover:-translate-y-1 flex items-center gap-3"
-            >
-              Agendar Consultoria Técnica
-            </a>
-
-            {/* LinkedIn com estilo mais sóbrio */}
-            <a 
-              href="https://www.linkedin.com/in/higor-dos-santos-machado-9a269a139/" 
-              target="_blank" 
-              className="bg-slate-800/50 hover:bg-slate-800 text-white px-10 py-5 rounded-full font-bold text-lg transition-all flex items-center gap-2 border border-slate-700 backdrop-blur-sm"
-            >
-              Conectar no LinkedIn <ExternalLink size={20} />
-            </a>
-
-            {/* Currículo com foco em Trajetória */}
-            <a 
-              href="/Curriculo_Higor.pdf" 
-              target="_blank"
-              className="bg-slate-800/50 hover:bg-slate-800 text-white px-10 py-5 rounded-full font-bold text-lg transition-all flex items-center gap-2 border border-slate-700 backdrop-blur-sm"
-            >
-              <FileText size={20} /> Baixar Executive Summary
-            </a>
+        {/* Card LinkedIn */}
+        <a 
+          href="https://www.linkedin.com/in/higor-dos-santos-machado-9a269a139/"
+          target="_blank"
+          className="group relative flex items-center gap-4 bg-slate-900/50 border border-slate-700/50 p-2 pr-6 rounded-full hover:border-blue-500/50 transition-all w-full md:w-auto"
+        >
+          <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-500">
+            <Image src="/higor_.png" alt="Higor Machado" fill className="object-cover" />
           </div>
-          
-          <p className="mt-12 text-slate-500 text-sm font-mono uppercase tracking-[0.2em]">
-            Disponível para projetos globais e parcerias estratégicas
-          </p>
+          <div className="text-left">
+            <p className="text-white font-bold text-xs">LinkedIn</p>
+            <p className="text-blue-400 text-[10px] flex items-center gap-1">@higor-machado <ExternalLink size={10} /></p>
+          </div>
+        </a>
+
+        {/* Card GitHub */}
+        <a 
+          href="https://github.com/HigorFatec"
+          target="_blank"
+          className="group relative flex items-center gap-4 bg-slate-900/50 border border-slate-700/50 p-2 pr-6 rounded-full hover:border-slate-400 transition-all w-full md:w-auto"
+        >
+          <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center border-2 border-slate-600 group-hover:border-white transition-colors">
+            <Github size={20} className="text-white" />
+          </div>
+          <div className="text-left">
+            <p className="text-white font-bold text-xs">GitHub</p>
+            <p className="text-slate-400 text-[10px] flex items-center gap-1">@HigorFatec <ExternalLink size={10} /></p>
+          </div>
+        </a>
+      </div>
+
+      <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight">
+        Vamos transformar sua operação em <span className="text-blue-500 italic">lucro real?</span>
+      </h2>
+      
+      <p className="text-slate-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+        Especialista em automação RPA, integração de sistemas e inteligência de dados. 
+        Código aberto, resultados fechados.
+      </p>
+
+      <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+        <a 
+          href="https://wa.me/5516981478468?text=Olá Higor, vi seu portfólio..." 
+          className="w-full md:w-auto bg-blue-600 hover:bg-blue-500 text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-2xl shadow-blue-600/30 transition-all hover:-translate-y-1 flex items-center justify-center gap-3"
+        >
+          Agendar Consultoria Técnica
+        </a>
+
+        <a 
+          href="/Curriculo_Higor.pdf" 
+          target="_blank"
+          className="w-full md:w-auto bg-slate-800 hover:bg-slate-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700"
+        >
+          <FileText size={20} /> Baixar Resumo Executivo
+        </a>
+      </div>
+
+      <div className="mt-12 flex items-center justify-center gap-8 text-slate-500">
+        <div className="flex items-center gap-2 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em]">
+          <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+          Disponível para novos projetos
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
